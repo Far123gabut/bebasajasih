@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buka BMKG</title>
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background: #008CBA;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #006f94;
+    }
+  </style>
+</head>
+<body>
+  <button id="btnBuka">Buka Website BMKG</button>
+
+  <script>
+    document.getElementById("btnBuka").addEventListener("click", function () {
+      window.open("https://bmkg.go.id", "_blank"); 
+      // "_blank" artinya buka tab baru
+      // kalau mau di tab yang sama ganti jadi "_self"
+    });
+  </script>
+</body>
+</html>
