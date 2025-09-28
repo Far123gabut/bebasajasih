@@ -3,22 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Buka 4 Tab</title>
+  <title>Buka BMKG di Iframe</title>
   <style>
     body {
       display: flex;
+      flex-direction: column;
       height: 100vh;
       justify-content: center;
       align-items: center;
       background: #111;
       color: white;
       font-family: Arial, sans-serif;
+      gap: 10px;
+    }
+    input {
+      padding: 8px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: none;
+      text-align: center;
+      width: 120px;
     }
     button {
-      padding: 12px 20px;
-      font-size: 18px;
+      padding: 10px 18px;
+      font-size: 16px;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       background: #28a745;
       color: white;
       cursor: pointer;
@@ -27,22 +37,38 @@
     button:hover {
       background: #1e7e34;
     }
+    iframe {
+      margin-top: 15px;
+      width: 90%;
+      height: 400px;
+      border: 2px solid #555;
+      border-radius: 8px;
+      background: white;
+    }
   </style>
 </head>
 <body>
-  <button id="btnBuka">Buka 4 Tab BMKG</button>
+  <h2>Tampilkan BMKG di Iframe</h2>
+  <input type="number" id="jumlah" placeholder="Jumlah iframe" min="1" max="4">
+  <button id="btnBuka">Buka</button>
+  <div id="iframeContainer"></div>
 
   <script>
     document.getElementById("btnBuka").addEventListener("click", function () {
-      window.open("https://bmkg.go.id", "_blank");
-      window.open("https://bmkg.go.id", "_blank");
-      window.open("https://bmkg.go.id", "_blank");
-      window.open("https://bmkg.go.id", "_blank");
-       window.open("https://bmkg.go.id", "_blank");
-      window.open("https://bmkg.go.id", "_blank");
-       window.open("https://bmkg.go.id", "_blank");
-      window.open("https://bmkg.go.id", "_blank");
-    }); 
+      const jumlah = parseInt(document.getElementById("jumlah").value);
+      const container = document.getElementById("iframeContainer");
+      container.innerHTML = ""; // reset iframe lama
+
+      if (!isNaN(jumlah) && jumlah > 0) {
+        for (let i = 0; i < jumlah; i++) {
+          const frame = document.createElement("iframe");
+          frame.src = "https://bmkg.go.id";
+          container.appendChild(frame);
+        }
+      } else {
+        alert("Masukkan jumlah iframe yang benar!");
+      }
+    });
   </script>
 </body>
 </html>
