@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Buka BMKG</title>
+  <title>Buka 4 Tab</title>
   <style>
     body {
       display: flex;
@@ -19,26 +19,25 @@
       font-size: 18px;
       border: none;
       border-radius: 8px;
-      background: #008CBA;
+      background: #28a745;
       color: white;
       cursor: pointer;
       transition: 0.3s;
     }
     button:hover {
-      background: #006f94;
+      background: #1e7e34;
     }
   </style>
 </head>
 <body>
-  <button id="btnBuka">Buka Website BMKG</button>
+  <button id="btnBuka">Buka 4 Tab BMKG</button>
 
   <script>
     document.getElementById("btnBuka").addEventListener("click", function () {
       window.open("https://bmkg.go.id", "_blank");
-       window.open("https://ixcellent.vercel.app", "_blank");
-       window.open("https://bmkg.go.id", "_blank");
-      // "_blank" artinya buka tab baru
-      // kalau mau di tab yang sama ganti jadi "_self"
+      window.open("https://bmkg.go.id", "_blank");
+      window.open("https://bmkg.go.id", "_blank");
+      window.open("https://bmkg.go.id", "_blank");
     });
   </script>
 </body>
